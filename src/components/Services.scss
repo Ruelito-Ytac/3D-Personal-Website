@@ -1,0 +1,84 @@
+#services_wrapper{
+    background-color: #171C22;
+    padding: 0 110px;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .container{
+        width: 100%;
+        max-width: 80vw;
+        margin: auto;
+        padding: 200px 0;
+
+        h2{
+            margin: 0 auto 100px;
+            text-align: center;
+            font: 600 48px/62px "Cairo";
+            color: #C9D9E5;
+    
+            span{
+                font: 700 16px/16px "Cairo";
+                color: #26FACA;
+                display: block;
+            }
+        }
+
+        #services_list{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .services_item{
+                margin-right: 3%;
+                text-align: center;
+
+                span{
+                    font: 400 16px/28px "Cairo";
+                    color: #78889E;
+                    display: block;
+                }
+
+                &:last-child{
+                    margin-right: 0;
+                }
+
+                .services_details{
+                    background-color: #1D232B;
+                    width: 252px;
+                    height: 272px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    border-bottom: 3px solid transparent;
+                    margin-bottom: 50px;
+
+                    &:hover{
+                        background-color: #1E2835;
+                        border-bottom: 3px solid #26FACA;
+                        transition: .25s ease-in-out;
+                    }
+
+                    img{
+                        margin-bottom: 24px;
+                    }
+
+                    h3{
+                        font: 700 20px/28px "Cairo";
+                        color: #C9D9E5;
+                        margin: 0;
+                    }
+                }
+
+                h5{
+                    font: 400 40px/48px "Cairo";
+                    color: #26FACA;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

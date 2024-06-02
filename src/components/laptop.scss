@@ -1,0 +1,8 @@
+#screen{
+    background: rgb(32,39,47);
+    background: linear-gradient(128deg, rgba(32,39,47,1) 0%, rgba(23,28,34,1) 100%);
+    width: 1440px;
+    height: 900px;
+    overflow: hidden;
+    transition: 1.6s ease-in-out;
+}

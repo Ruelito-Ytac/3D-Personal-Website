@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+
+#monitor_wrapper{
+    // transition: 3s ease-in-out;
+    // opacity: 1;
+    
+    // &.hidden{
+    //     opacity: 0;
+    // }
+
+    #monitor_details{
+        padding: 0px 120px;
+        z-index: 5;
+        position: absolute;
+        
+        h2{
+            z-index: 5;
+            font: 900 80px/80px "Cairo";
+            cursor: text;
+            margin-bottom: 80px;
+            color: #26FACA;
+
+            span{
+                display: block;
+                color: #fff;
+                font: 700 50px/80px "Cairo";
+            }
+        }
+
+        #actions{
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+        }
+
+        button{
+            width: 320px;
+            height: 100px;
+            color: #18B793;
+            border: 0.25vw solid #18B793;
+            background-color: transparent;
+            margin-bottom: 30px;
+
+            &:last-child{
+                margin-bottom: 0;
+            }
+
+            &:hover{
+                background-color: #18B793;
+                color: #fff;
+                transition: .25s ease-in-out;
+            }
+        }
+
+        a, button{
+            font: 700 40px/52px "Cairo";
+            cursor: pointer;
+        }
+    }
+    img{
+        width: 1350px;
+        pointer-events: none;
+        position: absolute;
+        z-index: 1;
+        right: -300px;
+        top: 30px;
+    }
+}
