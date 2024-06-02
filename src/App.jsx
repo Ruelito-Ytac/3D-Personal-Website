@@ -19,66 +19,66 @@ function App() {
   const backdrop_ref = useRef(null);
 
   useEffect(() => {
-    gsap.set(".cursor_dot", { force3D: true });
-    window.addEventListener("mousemove", (event) => {
-      const { clientX, clientY, target } = event;
+    // gsap.set(".cursor_dot", { force3D: true });
+    // window.addEventListener("mousemove", (event) => {
+    //   const { clientX, clientY, target } = event;
 
-      if(target instanceof HTMLElement){
-        const data = ["char", "line", "word"];
-        const client_data = (target.className === "char") ? 50 : 25;
+    //   if(target instanceof HTMLElement){
+    //     const data = ["char", "line", "word"];
+    //     const client_data = (target.className === "char") ? 50 : 25;
 
-        gsap.to(".cursor_dot", {
-          x: clientX - client_data,
-          y: clientY - client_data,
-          opacity: 1,
-          duration: .25,
-          ease: "none",
-        });
+    //     gsap.to(".cursor_dot", {
+    //       x: clientX - client_data,
+    //       y: clientY - client_data,
+    //       opacity: 1,
+    //       duration: .25,
+    //       ease: "none",
+    //     });
 
-        gsap.to(".cursor_dot_center", {
-          x: clientX - 2.5,
-          y: clientY - 2.5,
-          duration: .1,
-          ease: "none",
-        });
-      }
-    });
+    //     gsap.to(".cursor_dot_center", {
+    //       x: clientX - 2.5,
+    //       y: clientY - 2.5,
+    //       duration: .1,
+    //       ease: "none",
+    //     });
+    //   }
+    // });
 
-    document.body.querySelector("h1")?.addEventListener("mouseenter", (event) => {
-      const { clientX, clientY } = event;
+    // document.body.querySelector("h1")?.addEventListener("mouseenter", (event) => {
+    //   const { clientX, clientY } = event;
 
-      gsap.to(".cursor_dot", {
-        x: clientX - 50,
-        y: clientY - 50,
-        width: 100,
-        height: 100,
-        duration: .25,
-        ease: "none",
-        background: "#26FACA",
-      });
+    //   gsap.to(".cursor_dot", {
+    //     x: clientX - 50,
+    //     y: clientY - 50,
+    //     width: 100,
+    //     height: 100,
+    //     duration: .25,
+    //     ease: "none",
+    //     background: "#26FACA",
+    //   });
 
-      gsap.to(".cursor_dot_center", {
-        opacity: 0
-      });
-    });
+    //   gsap.to(".cursor_dot_center", {
+    //     opacity: 0
+    //   });
+    // });
 
-    document.body.querySelector("h1")?.addEventListener("mouseleave", (event) => {
-      const { clientX, clientY } = event;
+    // document.body.querySelector("h1")?.addEventListener("mouseleave", (event) => {
+    //   const { clientX, clientY } = event;
 
-      gsap.to(".cursor_dot", {
-        x: clientX - 25,
-        y: clientY - 25,
-        width: 50,
-        height: 50,
-        duration: .25,
-        ease: "none",
-        background: "transparent"
-      });
+    //   gsap.to(".cursor_dot", {
+    //     x: clientX - 25,
+    //     y: clientY - 25,
+    //     width: 50,
+    //     height: 50,
+    //     duration: .25,
+    //     ease: "none",
+    //     background: "transparent"
+    //   });
 
-      gsap.to(".cursor_dot_center", {
-        opacity: .25
-      });
-    });
+    //   gsap.to(".cursor_dot_center", {
+    //     opacity: .25
+    //   });
+    // });
     
     const backdrop = backdrop_ref.current;
     
