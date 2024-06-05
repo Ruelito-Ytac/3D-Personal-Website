@@ -1,6 +1,10 @@
 import React, { useEffect } from "react";
 import "./NavBar.scss";
-import KUTE from 'kute.js'
+import KUTE from "kute.js"
+
+/* GSAP */
+import gsap from "gsap";
+
 
 const NavBar = () => {
     useEffect(() => {
@@ -10,9 +14,36 @@ const NavBar = () => {
                 path: targetPath,
                 }, {
                     easing: "easingBounceIn",
-                    duration: 2000,
+                    duration: 500,
                 }).start();
-            }, 1000);
+        }, 4000);
+
+        gsap.to("nav", {
+            top: (window.innerHeight / 2) - 50,
+        });
+
+        gsap.to("svg", {
+            opacity: 1,
+            duration: .5,
+            rotation: 0,
+        });
+
+        const set_nav_to = gsap.to("nav", {
+            height: 100,
+            top: 100,
+            duration: 1.25,
+            ease: "bounce.out",
+        });
+
+        const svg_logo_icon_to = gsap.to("svg", {
+            scale: 1,
+            duration: .5,
+            ease: "sine",
+            rotation: 360,
+        });
+
+        set_nav_to.delay(2);
+        svg_logo_icon_to.delay(2);
     }, []);
 
     return (
@@ -23,7 +54,6 @@ const NavBar = () => {
                     <path id="logo_ruel" fillRule="evenodd" clipRule="evenodd" d="M91.3214 0.0091192L97.5017 6.66461L117.623 28.3337L123.811 21.6691L130 28.3337L123.811 34.9983L130 41.663L123.811 48.3276L117.623 41.6629L91.3214 69.9876L85.1328 63.323L111.434 34.9983L91.3131 13.3293L38.6903 70L38.6787 69.9875L38.6786 69.9876L12.3772 41.6629L6.18857 48.3276L0 41.663L6.1886 34.9983L4.2277e-05 28.3337L6.18861 21.6691L12.3772 28.3337L38.6786 0.0091192L44.8671 6.67373L18.5657 34.9983L38.6902 56.6709L91.3132 0L91.3214 0.0091192Z" fill="#26FACA"/>
                 </svg>
             </a>
-
         </nav>
     )
 }

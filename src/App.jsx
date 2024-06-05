@@ -5,6 +5,7 @@ import { Suspense, useEffect, useState, useRef } from "react";
 
 /* GSAP */
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 /* STYLE */
 import "./App.scss";
@@ -12,6 +13,8 @@ import "./App.scss";
 /* COMPONENTS */
 import NavBar from "./components/NavBar";
 import Services from "./components/Services";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const [is_loading, setLoading] = useState(true);
@@ -83,9 +86,9 @@ function App() {
     const backdrop = backdrop_ref.current;
     
     setTimeout(() => {
-      gsap.to(backdrop, {duration: 3, opacity: 0, ease: "circ.inOut",});
+      gsap.to(backdrop, {duration: 1, opacity: 0, ease: "circ.inOut",});
       setLoading(false);
-    }, 3000);
+    }, 2500);
   }, []);
 
   return (

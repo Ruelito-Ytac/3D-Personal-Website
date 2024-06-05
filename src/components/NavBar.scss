@@ -1,18 +1,18 @@
 nav{
     position: absolute;
-    top: 2.60vw;
+    top: calc(50% - 50px);
     max-width: 80vw;
     margin: 0 auto;
     left: 0;
     right: 0;
-    z-index: 99;
-    padding: 2vw 1.04vw;
     z-index: 100;
     text-align: center;
+    padding: 2vw 1.04vw;
 
     >a{
         svg{
-            transform: scale(1.5);
+            transform: scale(3.5);
+            opacity: 0;
 
             #logo_ruel{
                 margin: 0 auto;
