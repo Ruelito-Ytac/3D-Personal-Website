@@ -1,20 +1,22 @@
 #services_wrapper{
     background-color: #171C22;
-    padding: 0 110px;
+    padding: 200px 110px;
     margin: 0;
-    min-height: 100%;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    z-index: 100;
+    position: relative;
 
     .container{
         width: 100%;
         max-width: 80vw;
         margin: auto;
-        padding: 200px 0;
 
         h2{
-            margin: 0 auto 100px;
+            margin: 0 auto 60px;
             text-align: center;
             font: 600 48px/62px "Cairo";
             color: #C9D9E5;
@@ -30,6 +32,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            transform: scale(.85);
+            opacity: 0;
 
             .services_item{
                 margin-right: 3%;

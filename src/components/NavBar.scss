@@ -1,11 +1,11 @@
 nav{
-    position: absolute;
+    position: fixed;
     top: calc(50% - 50px);
     max-width: 80vw;
     margin: 0 auto;
     left: 0;
     right: 0;
-    z-index: 100;
+    z-index: 999;
     text-align: center;
     padding: 2vw 1.04vw;
 
@@ -16,7 +16,10 @@ nav{
 
             #logo_ruel{
                 margin: 0 auto;
-                transform: translate(3px, -13px);
+                transform: translate(3px, 0px);
+            }
+            
+            #ytac_text{
                 visibility: hidden;
             }
         }
@@ -25,7 +28,7 @@ nav{
 
 #canvas_wrapper{
     z-index: 1;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     position: relative;
 }

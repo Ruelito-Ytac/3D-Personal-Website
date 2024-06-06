@@ -14,6 +14,9 @@ import "./App.scss";
 import NavBar from "./components/NavBar";
 import Services from "./components/Services";
 
+/* Lenis */
+import Lenis from "lenis";
+
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
@@ -89,25 +92,81 @@ function App() {
       gsap.to(backdrop, {duration: 1, opacity: 0, ease: "circ.inOut",});
       setLoading(false);
     }, 2500);
+
+    const lenis = new Lenis();
+
+    lenis.on('scroll', ScrollTrigger.update);
+
+    gsap.ticker.add((time)=>{
+      lenis.raf(time * 1000);
+    });
+
+    gsap.ticker.lagSmoothing(0);
   }, []);
+
+  useEffect(() => {
+    if(!is_loading){
+      const services_trigger = document.getElementById("services_list");
+      const canvas_hero_trigger = document.getElementById("canvas_hero_section");
+      const nav_wrapper_trigger = document.getElementById("nav_wrapper");
+
+      gsap.to(nav_wrapper_trigger, {
+        top: "5%",
+        rotate: 720,
+        scale: .75,
+        scrollTrigger: {
+          trigger: "#services_wrapper",
+          start: "top center",
+          end: "center center",
+          scrub: true,
+          markers: false,
+          toggleActions: "play reverse play complete",
+        }
+      });
+
+      gsap.to(canvas_hero_trigger, {
+        position: "sticky",
+        top: 0,
+        opacity: 0,
+        scrollTrigger: {
+          trigger: "#canvas_hero_section",
+          start: "center center",
+          end: "bottom center",
+          scrub: true,
+          markers: false,
+        }
+      });
+
+      gsap.to(services_trigger, {
+        scale: 1,
+        opacity: 1,
+        duration: .5,
+        scrollTrigger: {
+          trigger: "#services_wrapper",
+          start: "top center",
+          end: "center center",
+          scrub: true,
+          markers: false,
+        }
+      });
+    }
+  }, [is_loading])
 
   return (
     <div id="body_wrapper">
       <div className="cursor_dot"></div>
       <div className="cursor_dot_center"></div>
       <NavBar />
-      <section id="canvas_wrapper">
-        <Canvas shadows camera={{ position: [0, 0, 9], fov: 42 }}>
-          <color attach="background" args={["#1A1F26"]} />
-          <fog attach="fog" args={["#1A1F26", 10, 25]} />
-          <Suspense>
-            <Experience />
-          </Suspense>
-          <EffectComposer>
-            <Bloom mipmapBlur intensity={1.2} />
-          </EffectComposer>
-        </Canvas>
-      </section>
+      <Canvas id="canvas_hero_section" shadows camera={{ position: [0, 0, 9], fov: 42 }}>
+        <color attach="background" args={["#1A1F26"]} />
+        <fog attach="fog" args={["#1A1F26", 10, 25]} />
+        <Suspense>
+          <Experience />
+        </Suspense>
+        <EffectComposer>
+          <Bloom mipmapBlur intensity={1.2} />
+        </EffectComposer>
+      </Canvas>
 
       { (!is_loading) &&
         <>

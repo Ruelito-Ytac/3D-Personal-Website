@@ -217,6 +217,11 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
+"@darkroom.engineering/tempus@^0.0.46":
+  version "0.0.46"
+  resolved "https://registry.npmjs.org/@darkroom.engineering/tempus/-/tempus-0.0.46.tgz"
+  integrity sha512-s5vav3KMHYezvUCl4ee5epg0oimF6M8C9gAaKxFnFaTvX2q3ywFDryIv6XLd0mRFUt3S1uHDJqKaiEcs2ZVSvw==
+
 "@esbuild/win32-x64@0.16.17":
   version "0.16.17"
   resolved "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.16.17.tgz"
@@ -796,6 +801,13 @@ kute.js@^2.2.4:
     minifill "^0.0.17"
     svg-path-commander "1.0.5"
 
+lenis@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.npmjs.org/lenis/-/lenis-1.1.2.tgz"
+  integrity sha512-3DEFkKyWJeVOzK1hLm4uQTp4tdGJEOT1LUbszGhz05MRXy3Hh/XRR2mupigW2M4WhZaImg45tJrtDMomCjCM4A==
+  dependencies:
+    "@darkroom.engineering/tempus" "^0.0.46"
+
 lil-gui@~0.17.0:
   version "0.17.0"
   resolved "https://registry.npmjs.org/lil-gui/-/lil-gui-0.17.0.tgz"
@@ -937,7 +949,7 @@ react-composer@^5.0.3:
   dependencies:
     prop-types "^15.6.0"
 
-react-dom@^18.2.0, react-dom@>=16.13, react-dom@>=18.0:
+react-dom@^18.2.0, react-dom@>=16.13, react-dom@>=17.0.0, react-dom@>=18.0:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
   integrity sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g==
@@ -975,7 +987,7 @@ react-use-measure@^2.1.1:
   dependencies:
     debounce "^1.2.1"
 
-"react@^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", react@^18.0.0, react@^18.2.0, "react@>= 16.8.0", react@>=16, react@>=16.13, react@>=16.8, react@>=17.0, react@>=18.0:
+"react@^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", react@^18.0.0, react@^18.2.0, "react@>= 16.8.0", react@>=16, react@>=16.13, react@>=16.8, react@>=17.0, react@>=17.0.0, react@>=18.0:
   version "18.2.0"
   resolved "https://registry.npmjs.org/react/-/react-18.2.0.tgz"
   integrity sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==
