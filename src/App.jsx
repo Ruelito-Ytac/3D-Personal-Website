@@ -21,6 +21,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const [is_loading, setLoading] = useState(true);
+  const [current_top_logo, setTopLogo] = useState("5%");
 
   const backdrop_ref = useRef(null);
 
@@ -95,7 +96,7 @@ function App() {
 
     const lenis = new Lenis();
 
-    lenis.on('scroll', ScrollTrigger.update);
+    lenis.on("scroll", ScrollTrigger.update);
 
     gsap.ticker.add((time)=>{
       lenis.raf(time * 1000);
@@ -110,17 +111,28 @@ function App() {
       const canvas_hero_trigger = document.getElementById("canvas_hero_section");
       const nav_wrapper_trigger = document.getElementById("nav_wrapper");
 
+      const animateLogoToServices = ({ isActive }) => {
+        if(isActive){
+          setTopLogo(document.getElementById("services_wrapper").scrollHeight + 50);
+          
+          setTimeout(() => {
+            window.scroll({top: document.getElementById("services_wrapper").scrollHeight + 50, behavior: "smooth"});
+          }, 200)
+        }
+      }
+
       gsap.to(nav_wrapper_trigger, {
-        top: "5%",
+        top: current_top_logo,
         rotate: 720,
         scale: .75,
         scrollTrigger: {
           trigger: "#services_wrapper",
-          start: "top center",
+          start: "-40% center",
           end: "center center",
           scrub: true,
           markers: false,
-          toggleActions: "play reverse play complete",
+          toggleActions: "play play play complete",
+          onEnter: animateLogoToServices
         }
       });
 
@@ -150,7 +162,7 @@ function App() {
         }
       });
     }
-  }, [is_loading])
+  }, [is_loading, current_top_logo])
 
   return (
     <div id="body_wrapper">
